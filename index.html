@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartPress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="logo">SmartPress</div>
+      <nav>
+        <a class="nav active">Dashboard</a>
+        <a class="nav">Roadmap</a>
+        <a class="nav">Queue</a>
+        <a class="nav">Workspace</a>
+        <a class="nav">Archive</a>
+        <a class="nav">Communication</a>
+        <a class="nav">Admin</a>
+        <a class="nav">Profile</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <input placeholder="Search tasks, people, queues..." />
+        <div class="topbar-actions">
+          <button>🔔</button>
+          <button>+ New Task</button>
+          <div class="avatar">JD</div>
+        </div>
+      </header>
+
+      <section class="screen">
+        <h2>Dashboard</h2>
+        <div class="grid metrics">
+          <article class="card"><h3>Tasks by Status</h3><p>Draft 12 · In Progress 8 · Submitted 4</p></article>
+          <article class="card"><h3>Assigned to me</h3><p>5 open tickets</p></article>
+          <article class="card"><h3>Delayed</h3><p class="danger">3 tasks overdue</p></article>
+          <article class="card"><h3>Queue Readiness</h3><p>82% ready</p></article>
+        </div>
+      </section>
+
+      <section class="screen">
+        <div class="screen-header">
+          <h2>Roadmap</h2>
+          <div class="filters">
+            <button>Assignee</button><button>Priority</button><button>Deadline</button>
+          </div>
+        </div>
+        <div class="kanban" id="kanban">
+          <div class="column" data-status="Draft"><h4>Draft</h4><div class="dropzone"></div></div>
+          <div class="column" data-status="Assigned"><h4>Assigned</h4><div class="dropzone"></div></div>
+          <div class="column" data-status="In Progress"><h4>In Progress</h4><div class="dropzone"></div></div>
+          <div class="column" data-status="Submitted"><h4>Submitted</h4><div class="dropzone"></div></div>
+          <div class="column" data-status="Needs Revision"><h4>Needs Revision</h4><div class="dropzone"></div></div>
+          <div class="column" data-status="Completed"><h4>Completed</h4><div class="dropzone"></div></div>
+          <div class="column" data-status="Approved"><h4>Approved</h4><div class="dropzone"></div></div>
+          <div class="column" data-status="Queued"><h4>Queued</h4><div class="dropzone"></div></div>
+        </div>
+      </section>
+
+      <section class="screen split">
+        <div class="card">
+          <h2>Task Detail</h2>
+          <input value="Breaking: City Council Budget Vote" />
+          <textarea rows="4">Mission brief and reporting context...</textarea>
+          <label>Chapeau</label>
+          <input value="Budget vote could reshape transportation policy." />
+          <label>Content</label>
+          <textarea rows="8">Reporter draft content...</textarea>
+          <button>Submit for Review</button>
+        </div>
+        <aside class="card">
+          <h3>Metadata</h3>
+          <p><strong>Assignee:</strong> L. Rivera</p>
+          <p><strong>Owner:</strong> M. Chen</p>
+          <p><strong>Status:</strong> In Progress</p>
+          <p><strong>Priority:</strong> High</p>
+          <p><strong>Deadline:</strong> Today 17:00</p>
+          <h4>Activity</h4>
+          <ul><li>Assigned 09:15</li><li>Note added 10:05</li></ul>
+        </aside>
+      </section>
+
+      <section class="screen">
+        <h2>Queue Builder</h2>
+        <div class="queue" id="queue">
+          <div class="queue-item" draggable="true">1. L. Rivera — Budget vote update</div>
+          <div class="queue-item" draggable="true">2. K. Hassan — Transit strike impacts</div>
+          <div class="queue-item" draggable="true">3. P. Gomez — School board wrap</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
